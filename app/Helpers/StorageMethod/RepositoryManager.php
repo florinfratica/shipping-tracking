@@ -8,7 +8,6 @@ use Illuminate\Support\Manager;
 
 class RepositoryManager extends Manager
 {
-
     protected function createEloquentRepositoryDriver()
     {
         return new EloquentStorageRepository();
@@ -24,6 +23,7 @@ class RepositoryManager extends Manager
         if ($this->app['config']['storage.driver'] == 'csv') {
             return 'CsvRepository';
         }
+
         return 'EloquentRepository';
     }
 }

@@ -26,6 +26,7 @@ class StorageMethodServiceProvider extends ServiceProvider
     {
         $this->app->singleton('App\Helpers\StorageMethod\Repositories\StorageRepository', function ($app) {
             $manager = new RepositoryManager($app);
+
             return $manager->driver();
         });
     }
