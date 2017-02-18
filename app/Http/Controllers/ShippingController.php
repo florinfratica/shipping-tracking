@@ -7,7 +7,6 @@ use Response;
 
 class ShippingController extends Controller
 {
-
     private $repository;
 
     public function __construct(StorageRepository $repository)
@@ -18,6 +17,7 @@ class ShippingController extends Controller
     public function show($code)
     {
         $result = $this->repository->findByTrackingCode($code);
+
         return Response::json(
             [
                 'status' => 'success',

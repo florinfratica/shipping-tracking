@@ -6,7 +6,6 @@ use App\Shipping;
 
 class EloquentStorageRepository implements StorageRepository
 {
-
     public function findByTrackingCode($code)
     {
         return Shipping::where('tracking_code', $code)->first();
